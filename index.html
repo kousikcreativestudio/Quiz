@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+
+  <!-- WELCOME SCREEN -->
+  <div id="welcomeScreen" class="screen active">
+    <div class="welcome-card">
+      <div class="quiz-icon">📝</div>
+      <h1 id="welcomeTitle">Quiz</h1>
+      <p id="welcomeDesc" class="welcome-desc">Test your knowledge and see how you score!</p>
+      <div class="form-group">
+        <label for="viewerName">Your Name</label>
+        <input type="text" id="viewerName" placeholder="Enter your name..." maxlength="50"/>
+      </div>
+      <button class="btn btn-primary btn-lg" id="startQuizBtn">Start Quiz →</button>
+      <p class="question-count-hint" id="questionCountHint"></p>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quizScreen" class="screen">
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <div class="quiz-title-bar">
+          <span id="quizTitleBar">Quiz</span>
+          <span class="viewer-name-badge" id="viewerNameBadge"></span>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-text">
+            <span id="questionNum">1</span> / <span id="questionTotal">10</span>
+          </div>
+          <div class="progress-bar-outer">
+            <div class="progress-bar-inner" id="progressBar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card" id="questionCard">
+        <div class="question-number-badge" id="qNumBadge">Q1</div>
+        <h2 class="question-text" id="questionText">Question text here</h2>
+        <div class="options-grid" id="optionsGrid"></div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn btn-outline" id="prevBtn">← Previous</button>
+        <button class="btn btn-primary" id="nextBtn">Next →</button>
+        <button class="btn btn-success hidden" id="submitBtn">Submit Quiz ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="resultScreen" class="screen">
+    <div class="result-card">
+      <div class="result-icon" id="resultIcon">🎉</div>
+      <h2 class="result-title" id="resultTitle">Quiz Complete!</h2>
+      <div class="score-display">
+        <span class="score-num" id="scoreNum">7</span>
+        <span class="score-sep">/</span>
+        <span class="score-den" id="scoreDen">10</span>
+      </div>
+      <div class="score-bar-wrap">
+        <div class="score-bar" id="scoreBar"></div>
+      </div>
+      <p class="score-message" id="scoreMessage">Great job!</p>
+
+      <div class="result-details" id="resultDetails"></div>
+
+      <div class="result-actions">
+        <button class="btn btn-outline" id="retakeBtn">Retake Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
