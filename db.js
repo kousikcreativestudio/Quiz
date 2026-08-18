@@ -12,7 +12,7 @@
  * ADMIN PASSWORD: Change ADMIN_PASSWORD below.
  */
 
-const ADMIN_PASSWORD = "admin123"; // <-- CHANGE THIS
+const ADMIN_PASSWORD = "v888"; // <-- CHANGE THIS
 
 // ─────────────────────────────────────────────
 // DEFAULT QUIZ DATA (edit freely)
